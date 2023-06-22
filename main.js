@@ -15,9 +15,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const cssAnchor = mindarThree.addCSSAnchor(0);
     cssAnchor.group.add(obj);
 
+    function redirectToAmazon(){
+      window.location.href = "https://www.amazon.in/"
+    }
+
     cssAnchor.onTargetFound = () => {
       // player.playVideo();
-      window.location.href = 'https://www.amazon.com'
+      // window.location.href = 'https://www.amazon.com'
+      // document.getElementById("player").innerHTML=`
+      //   <a href="https://www.amazon.in/>
+      //     <img src="https://static.toiimg.com/thumb/msid-94222926,imgsize-897192,width-400,resizemode-4/94222926.jpg"/>
+      //   </a>
+
+      // `
+      var elem = document.createElement("img");
+      elem.setAttribute('id','amazon-sale')
+      document.getElementById("player").appendChild(elem);
+      elem.src = './amazon_sale.webp';
+
+      document.getElementById('amazon-sale').onclick = redirectToAmazon;
+
     }
     cssAnchor.onTargetLost = () => {
       // player.pauseVideo();
