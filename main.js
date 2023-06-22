@@ -16,7 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
     cssAnchor.group.add(obj);
 
     function redirectToAmazon(){
+      // function to redirect to amazon
       window.location.href = "https://www.amazon.in/"
+    }
+
+    function clearPreviousElement() {
+      // function to clear previous elements
+
+      let element = document.getElementById("player");
+      while (element.firstChild) {
+        element.removeChild(element.firstChild);
+
+      }
     }
 
     cssAnchor.onTargetFound = () => {
@@ -28,12 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
       //   </a>
 
       // `
-      var elem = document.createElement("img");
-      elem.setAttribute('id','amazon-sale')
-      document.getElementById("player").appendChild(elem);
-      elem.src = './amazon_sale.webp';
-
-      document.getElementById('amazon-sale').onclick = redirectToAmazon;
+      clearPreviousElement();
+        var elem = document.createElement("img");
+        elem.setAttribute('id','amazon-sale')
+        document.getElementById("player").appendChild(elem);
+        elem.src = './amazon_sale.webp';
+  
+        document.getElementById('amazon-sale').onclick = redirectToAmazon;
 
     }
     cssAnchor.onTargetLost = () => {
