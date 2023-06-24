@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         var elem = document.createElement("img");
         elem.setAttribute('id','amazon-sale')
         document.getElementById("player").appendChild(elem);
-        elem.src = './amazon_sale.webp';
+        elem.src = './amazon.gif';
   
         document.getElementById('amazon-sale').onclick = redirectToAmazon;
 
